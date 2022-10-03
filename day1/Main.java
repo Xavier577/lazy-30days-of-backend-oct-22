@@ -1,5 +1,6 @@
 package day1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -47,19 +48,20 @@ class RegExp {
 
 class Challenge {
     public static String task(String name) {
-        final RegExp namePattern = new RegExp("(B|b)olu|(O|o)dun");
 
         final RegExp specialCharaterPattern = new RegExp("[^A-Za-z0-9]");
 
         final boolean containsSpecialChar = specialCharaterPattern.test(name);
 
-        final boolean isBoluOrOdun = namePattern.test(name);
+        final String[] acceptableNamePatterns = { "Bolu", "bolu", "Odun", "odun" };
+
+        final boolean nameIsBoluOrOdun = Arrays.stream(acceptableNamePatterns).anyMatch(name::matches);
 
         if (containsSpecialChar) {
             return "Please remove all spaces or special characters";
-        } else if (isBoluOrOdun) {
-            String responseName = name == "bolu" ? "Bolu" : "Odun";
-            return String.format("Welcome Bolu or Odun", responseName);
+        } else if (nameIsBoluOrOdun) {
+            final String responseName = name.matches("bolu") ? "Bolu" : name.matches("odun") ? "Odun" : name;
+            return String.format("Welcome %s", responseName);
         } else {
             return String.format("it is nice to meet you, %s", name);
         }

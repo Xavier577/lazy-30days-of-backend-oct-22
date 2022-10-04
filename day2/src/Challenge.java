@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 class Challenge {
     public static ArrayList<String> leapYear(String year, int leapYearsAfter) {
-        // a year that is divible by 100 and 400 is a leap year
+        // a year that is divible by 4 is a leap year
         try {
             /** This is the divisor for leap year when not-end-of-century */
             int LEAP_YEAR_DIVISOR_NEOC = 4;

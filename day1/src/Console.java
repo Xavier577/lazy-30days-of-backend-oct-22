@@ -2,7 +2,7 @@ package day1.src;
 
 import java.util.Scanner;
 
-class Console {
+public class Console {
     public static void log(Object args) {
         System.out.println(args);
     }

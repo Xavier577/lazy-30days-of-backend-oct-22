@@ -2,7 +2,7 @@ package day1.src;
 
 import java.util.Arrays;
 
-class Challenge {
+public class Challenge {
     public static String task(String name) {
 
         final RegExp specialCharaterPattern = new RegExp("[^A-Za-z0-9]");

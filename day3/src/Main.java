@@ -5,8 +5,12 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String... args) {
 
-        ArrayList<Integer> f10 = Challenge.fibonacci(10);
+        ArrayList<Integer> t1 = Challenge.fibonacci(10);
 
-        System.out.println(f10.toString());
+        ArrayList<Integer> t2 = Challenge.fibonacci(100);
+
+        System.out.println(t1.toString());
+        System.out.println(t2.toString());
     }
+
 }

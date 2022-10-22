@@ -22,7 +22,7 @@ public class Challenge {
 
                 b = c;
 
-                fibonacciSequence.add(c);
+                fibonacciSequence.add(Math.abs(c));
 
             }
         } else if (n == 0) {
